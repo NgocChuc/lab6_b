@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Navigation Example</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f6f4f4;
+        }
+
+        h1 {
+            background-color: #f6f4f4;
+            font-family: Times, serif;
+            font-size: 35px;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .vertical-tabs {
+            background-color: #ffffff;
+            width: 200px;
+            float: left;
+        }
+
+        .tablinks {
+            display: flex;
+            background-color: #ffffff;
+            border: 2px solid #eceaea;
+            padding: 10px;
+            cursor: pointer;
+            text-align: left;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .img {
+            width: 70px;
+            height: 70px;
+            margin-top: 30px;
+            margin-right: 10px;
+        }
+
+        .tablinks.active {
+            padding-left: 16px;
+            border: 2px solid blueviolet;
+            border-left: 10px solid blueviolet;
+        }
+
+        .P1 {
+            display: flex;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-left: 500px;
+        }
+
+        .tabcontent .img_tab {
+            background-color: #f9f9f9;
+            border: none;
+            width: 600px;
+            height: 700px;
+        }
+
+        .tabcontent h3 {
+            margin-top: 0;
+        }
+
+        .tabcontent.show {
+            display: block;
+        }
+
+        .titleInfo, .info, .tag, .tllink {
+            background-color: #ffffff;
+        }
+
+        .info {
+            color: #767373;
+        }
+
+        .b {
+            display: flex;
+            gap: 5px;
+        }
+
+        .tag {
+            font-size: 13px;
+            font-weight: bold;
+            border: 3px solid rgb(138, 43, 226);
+            border-radius: 5px;
+            text-align: center;
+            width: 110px;
+            height: 20px;
+            color: blueviolet;
+            background-color: #ffffff;
+        }
+
+        .tllink {
+            font-weight: bold;
+            color: rgb(138, 43, 226);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="h">Learning focused on your goals</h1>
+    <div class="P1">
+        <div class="vertical-tabs">
+            <div class="tablinks" onclick="openTab(event, 'Tab1')">
+                <img src="imgreg7_2.png" alt="Tab 1 Image" class="img">
+                <div class="a">
+                    <h3 class="titleInfo">Hands-on training</h3>
+                    <p class="info">Upskill effectively with AI-powered coding exercises, practice tests, and quizzes
+                    </p>
+                </div>
+            </div>
+
+            <div class="tablinks" onclick="openTab(event, 'Tab2')">
+                <img src="imgreg7_3.png" alt="Tab 2 Image" class="img">
+                <div class="a">
+                    <h3 class="titleInfo">Certification prep</h3>
+                    <p class="info">Prep for industry-recognized certifications by solving real-world challenges and
+                        earn badges along the way.</p>
+                </div>
+            </div>
+
+            <div class="tablinks" onclick="openTab(event, 'Tab3')">
+                <img src="imgreg7_4.png" alt="Tab 3 Image" class="img">
+                <div class="a">
+                    <div class="b">
+                        <h3 class="titleInfo">Insights and analytics</h3>
+                        <p class="tag">Enterprise Plan</p>
+                    </div>
+                    <p class="info">Fast-track goals with advanced insights plus a dedicated customer success team to
+                        help drive effective learning.</p>
+                    <p class="tllink">Find out more →</p>
+                </div>
+            </div>
+
+            <div class="tablinks" onclick="openTab(event, 'Tab4')">
+                <img src="imgreg7_5.png" alt="Tab 4 Image" class="img">
+                <div class="a">
+                    <div class="b">
+                        <h3 class="titleInfo">Customizable content</h3>
+                        <p class="tag">Enterprise Plan</p>
+                    </div>
+                    <p class="info">Create tailored learning paths for team and organization goals and even host your
+                        own content and resources.</p>
+                    <p class="tllink">Find out more →</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="Tab1" class="tabcontent">
+            <img src="imgreg7_1.png" alt="Tab 1 Content Image" class="img_tab">
+        </div>
+
+        <div id="Tab2" class="tabcontent">
+            <img src="imgg.jpg" alt="Tab 2 Content Image" class="img_tab">
+        </div>
+
+        <div id="Tab3" class="tabcontent">
+            <img src="imgg.jpg" alt="Tab 3 Content Image" class="img_tab">
+            
+        </div>
+
+        <div id="Tab4" class="tabcontent">
+            <img src="imgg.jpg" alt="Tab 4 Content Image" class="img_tab">
+        </div>
+    </div>
+
+    <script>
+        function openTab(event, tabName) {
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("show");
+            }
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("show");
+
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+
+</html>
